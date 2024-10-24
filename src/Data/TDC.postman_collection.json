@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "c6dc9cae-a085-4c34-a890-db774deec99d",
+		"name": "TDC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4788700"
+	},
+	"item": [
+		{
+			"name": "User: listAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/list-all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"list-all"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Ejemplo",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/list-all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"list-all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 24 Oct 2024 19:25:18 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"userName\": \"elRols\",\n        \"password\": \"123\",\n        \"createdAt\": \"2024-10-24T13:08:09.161879\",\n        \"modifyAt\": null,\n        \"cards\": [\n            {\n                \"id\": 2,\n                \"cardName\": \"Santander\",\n                \"description\": \"\",\n                \"amount\": 30000,\n                \"cutOfDay\": \"15\",\n                \"paymentLimit\": \"30\",\n                \"createdAt\": \"2024-10-24T13:12:27.799574\",\n                \"modifyAt\": null\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "User: Add new",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"elRols\",\r\n    \"password\" : \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Card: List cards",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "Santiago",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/card",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"card"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Ejemplo",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/card",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"card"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 24 Oct 2024 21:17:22 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 2,\n        \"cardName\": \"Santander\",\n        \"description\": \"\",\n        \"amount\": 30000,\n        \"cutOfDay\": \"15\",\n        \"paymentLimit\": \"30\",\n        \"createdAt\": \"2024-10-24T13:12:27.799574\",\n        \"modifyAt\": null\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Card: Add new",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cardName\" : \"Santander\",\r\n    \"description\" : \"\",\r\n    \"amount\" : 30000,\r\n    \"cutOfDay\" : \"15\",\r\n    \"paymentLimit\" : \"30\",\r\n    \"appUser\"  : {\r\n        \"id\" : 1\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/card/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"card",
+						"add"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
